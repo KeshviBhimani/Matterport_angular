@@ -1,0 +1,53 @@
+<button type="button" id="btn" (click)="matframe()" *ngIf="!btnclicked" style="color: black;">Submit</button>
+<div class="container">
+    <div class="showcase_container">
+
+        <button class="add_tag" id="add" (click)="loadedShowcaseHandler()" style="position: absolute;
+        left: 160px;
+        bottom: 9px;
+        z-index: 1; display: none; cursor: pointer; border:none;"><i class="fa fa-dot-circle-o"
+                title="Add a new tag"></i>
+
+        </button>
+
+        <button class="remove_tags" id="rmv" (click)="removeAllTags()" style="position: absolute;
+        left: 200px;
+        bottom: 9px;
+        z-index: 1; display: none; cursor: pointer;">
+            <i class="fa fa-trash"></i> </button>
+
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+
+                <button type="button" class="btn cancel" id="closebtn" (click)="closeForm()" style="margin-left: 240px;
+                  margin-top: 1px;
+                  font-size:11pt;
+                  padding: 0px;
+                  margin-right: 0px;
+                  width: 30%;">&#10060;</button>
+                <h3 class="popup-title" style="margin-bottom:15px;">Create Issue
+                </h3>
+                <label for="title"><b>Title</b></label>
+                <input class="title" name="last0" type="text" value="title" ID="last0" #inputText>
+                <label for="psw"><b>select Status</b></label>
+                <input class="w3-input w3-border w3-round-large" name="last1" type="text">
+                <label for="psw"><b>Issue Type</b></label>
+                <input class="w3-input w3-border w3-round-large" name="last2" type="text">
+                <label for="psw"><b>Issue sub type</b></label>
+                <input class="w3-input w3-border w3-round-large" name="last3" type="text">
+                <label for="psw"><b>Due Date</b></label>
+                <input class="w3-input w3-border w3-round-large" name="last4" type="text">
+                <label for="psw"><b>Description</b></label>
+                <input class="w3-input w3-border w3-round-large" name="last5" type="text" value="Enter a description">
+                <button class="button" style="margin-left:40%; margin-top:2px;">Done</button>
+            </form>
+        </div>
+
+        <iframe class="matterport-frame__view" frameborder="0" [src]="modelUrl" #showCaseEmbed>
+
+        </iframe>
+        <!-- <button type="button" *ngIf="btnclicked" (click)="onFrameInit($event)">Connect to SDK</button> -->
+
+    </div>
+</div>
